@@ -6,9 +6,6 @@
   <title>KARUPPU ADIMAI - About & Courses</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ============================================
-       RESET & BASE
-    ============================================ */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
@@ -37,9 +34,7 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     a { text-decoration: none; color: inherit; }
 
-    /* ============================================
-       INTRO OVERLAY
-    ============================================ */
+    /* INTRO OVERLAY */
     .intro-overlay {
       position: fixed;
       top: 0; left: 0;
@@ -73,18 +68,9 @@
       border-top: 1px solid var(--gray);
     }
 
-    .intro-overlay.reveal .intro-bg-top {
-      transform: translateY(-100%);
-    }
-
-    .intro-overlay.reveal .intro-bg-bottom {
-      transform: translateY(100%);
-    }
-
-    .intro-overlay.hidden {
-      pointer-events: none;
-      visibility: hidden;
-    }
+    .intro-overlay.reveal .intro-bg-top { transform: translateY(-100%); }
+    .intro-overlay.reveal .intro-bg-bottom { transform: translateY(100%); }
+    .intro-overlay.hidden { pointer-events: none; visibility: hidden; }
 
     .intro-content {
       position: relative;
@@ -94,9 +80,7 @@
       transition: opacity 0.5s ease;
     }
 
-    .intro-overlay.reveal .intro-content {
-      opacity: 0;
-    }
+    .intro-overlay.reveal .intro-content { opacity: 0; }
 
     .intro-logo-icon {
       font-size: 3rem;
@@ -128,10 +112,7 @@
     }
 
     @keyframes letterReveal {
-      to {
-        opacity: 1;
-        transform: translateY(0) rotateX(0deg);
-      }
+      to { opacity: 1; transform: translateY(0) rotateX(0deg); }
     }
 
     .intro-line {
@@ -142,9 +123,7 @@
       animation: lineExpand 0.8s ease 1.2s forwards;
     }
 
-    @keyframes lineExpand {
-      to { width: 200px; }
-    }
+    @keyframes lineExpand { to { width: 200px; } }
 
     .intro-subtitle {
       font-family: 'Rajdhani', sans-serif;
@@ -155,9 +134,7 @@
       animation: subtitleFade 0.6s ease 1.5s forwards;
     }
 
-    @keyframes subtitleFade {
-      to { opacity: 1; }
-    }
+    @keyframes subtitleFade { to { opacity: 1; } }
 
     .intro-scanline {
       position: absolute;
@@ -165,13 +142,7 @@
       width: 100%; height: 100%;
       z-index: 3;
       pointer-events: none;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(192,192,192,0.03) 2px,
-        rgba(192,192,192,0.03) 4px
-      );
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(192,192,192,0.03) 2px, rgba(192,192,192,0.03) 4px);
       animation: scanlineMove 0.1s steps(3) infinite;
     }
 
@@ -203,14 +174,9 @@
       100% { opacity: 0; transform: translateY(-60px) scale(0); }
     }
 
-    /* Body hidden during intro */
-    body.intro-active {
-      overflow: hidden;
-    }
+    body.intro-active { overflow: hidden; }
 
-    /* ============================================
-       PARTICLE CANVAS
-    ============================================ */
+    /* PARTICLE CANVAS */
     #particleCanvas {
       position: fixed;
       top: 0; left: 0;
@@ -219,9 +185,7 @@
       pointer-events: none;
     }
 
-    /* ============================================
-       NAVIGATION
-    ============================================ */
+    /* NAVIGATION */
     .main-nav {
       position: fixed; top: 0; left: 0; width: 100%;
       padding: 15px 40px;
@@ -250,7 +214,6 @@
       font-size: 1.2rem; font-weight: 700;
       color: var(--silver-light);
       letter-spacing: 3px;
-      text-decoration: none;
     }
 
     .nav-links { display: flex; gap: 30px; }
@@ -327,9 +290,7 @@
       .main-nav { padding: 12px 20px; }
     }
 
-    /* ============================================
-       GLITCH TEXT
-    ============================================ */
+    /* GLITCH TEXT */
     .glitch-text { position: relative; }
 
     .glitch-text::before, .glitch-text::after {
@@ -364,9 +325,7 @@
       95% { transform: translate(2px,-2px); }
     }
 
-    /* ============================================
-       ABOUT HEADER
-    ============================================ */
+    /* ABOUT HEADER */
     .about-header {
       padding: 120px 20px 60px;
       text-align: center;
@@ -408,9 +367,7 @@
       50% { opacity: 1; transform: scaleX(1.5); }
     }
 
-    /* ============================================
-       COURSE CARDS
-    ============================================ */
+    /* COURSE CARDS */
     .courses-section {
       padding: 20px 0 80px;
       position: relative;
@@ -464,35 +421,6 @@
 
     .course-card:hover .course-image { transform: scale(1.05); }
 
-    .pcb-placeholder {
-      width: 100%; height: 100%;
-      display: flex; align-items: center;
-      justify-content: center;
-      background: #0a2a0a;
-    }
-
-    .pcb-svg { width: 100%; height: 100%; }
-
-    .image-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(180deg, transparent 60%, rgba(10,10,10,0.8) 100%);
-      display: flex; align-items: flex-end;
-      padding: 20px;
-    }
-
-    .course-badge {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.7rem;
-      color: var(--black);
-      background: var(--silver);
-      padding: 5px 15px;
-      border-radius: 20px;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-
     .course-details {
       flex: 1; padding: 40px;
       position: relative;
@@ -534,7 +462,7 @@
 
     .course-topics {
       display: flex; flex-wrap: wrap;
-      gap: 8px; margin-bottom: 20px;
+      gap: 8px;
     }
 
     .topic-tag {
@@ -553,21 +481,7 @@
       background: rgba(192,192,192,0.1);
     }
 
-    .course-meta {
-      display: flex; gap: 20px; flex-wrap: wrap;
-    }
-
-    .meta-item {
-      display: flex; align-items: center; gap: 8px;
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 0.9rem; color: var(--accent);
-    }
-
-    .meta-icon { font-size: 1.1rem; }
-
-    /* ============================================
-       CTA SECTION
-    ============================================ */
+    /* CTA SECTION */
     .cta-section {
       padding: 80px 20px;
       position: relative;
@@ -619,9 +533,7 @@
       box-shadow: 0 10px 30px rgba(192,192,192,0.3);
     }
 
-    /* ============================================
-       FOOTER
-    ============================================ */
+    /* FOOTER */
     .main-footer {
       position: relative; z-index: 1;
       padding: 30px;
@@ -637,18 +549,14 @@
       letter-spacing: 1px;
     }
 
-    /* ============================================
-       SCROLLBAR
-    ============================================ */
+    /* SCROLLBAR */
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: var(--black); }
     ::-webkit-scrollbar-thumb { background: var(--light-gray); border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--silver); }
     ::selection { background: rgba(192,192,192,0.3); color: #fff; }
 
-    /* ============================================
-       RESPONSIVE
-    ============================================ */
+    /* RESPONSIVE */
     @media (max-width: 1024px) {
       .course-card,
       .course-card.reverse {
@@ -672,7 +580,6 @@
 
     @media (max-width: 480px) {
       .page-title { font-size: 1.5rem; letter-spacing: 3px; }
-      .course-meta { flex-direction: column; gap: 10px; }
       .course-image-container { height: 200px; }
       .cta-title { font-size: 1.4rem; letter-spacing: 3px; }
       .cta-button { padding: 12px 30px; font-size: 0.85rem; }
@@ -683,9 +590,7 @@
 </head>
 <body class="about-page intro-active">
 
-  <!-- ============================================
-       INTRO OVERLAY
-  ============================================ -->
+  <!-- INTRO OVERLAY -->
   <div class="intro-overlay" id="introOverlay">
     <div class="intro-bg-top"></div>
     <div class="intro-bg-bottom"></div>
@@ -745,10 +650,7 @@
       <!-- Course 1: Basic Web Development -->
       <div class="course-card">
         <div class="course-image-container">
-          <img src="https://raw.githubusercontent.com/pprojectcentreee/KARUPPUADIMAI/main/WEB%20IMG.png" alt="Web Development" class="course-image" loading="lazy">
-          <div class="image-overlay">
-            <span class="course-badge">BEGINNER</span>
-          </div>
+          <img src="https://raw.githubusercontent.com/pprojectcentreee/KARUPPU-ADIMAI/main/WEB%20IMG.png" alt="Web Development" class="course-image" loading="lazy">
         </div>
         <div class="course-details">
           <div class="course-number">01</div>
@@ -767,21 +669,13 @@
             <span class="topic-tag">Responsive Design</span>
             <span class="topic-tag">Git & GitHub</span>
           </div>
-          <div class="course-meta">
-            <div class="meta-item"><span class="meta-icon">📚</span><span>8 Modules</span></div>
-            <div class="meta-item"><span class="meta-icon">⏱️</span><span>4 Weeks</span></div>
-            <div class="meta-item"><span class="meta-icon">🎯</span><span>Hands-on Projects</span></div>
-          </div>
         </div>
       </div>
 
       <!-- Course 2: Arduino UNO -->
       <div class="course-card reverse">
         <div class="course-image-container">
-          <img src="https://raw.githubusercontent.com/pprojectcentreee/KARUPPUADIMAI/main/arduino-electronics-integrated-circuit-ic.jpg" alt="Arduino UNO" class="course-image" loading="lazy">
-          <div class="image-overlay">
-            <span class="course-badge">INTERMEDIATE</span>
-          </div>
+          <img src="https://raw.githubusercontent.com/pprojectcentreee/KARUPPU-ADIMAI/main/arduino-electronics-integrated-circuit-ic.jpg" alt="Arduino UNO" class="course-image" loading="lazy">
         </div>
         <div class="course-details">
           <div class="course-number">02</div>
@@ -803,21 +697,13 @@
             <span class="topic-tag">Circuit Design</span>
             <span class="topic-tag">Basic Electronics</span>
           </div>
-          <div class="course-meta">
-            <div class="meta-item"><span class="meta-icon">📚</span><span>10 Modules</span></div>
-            <div class="meta-item"><span class="meta-icon">⏱️</span><span>5 Weeks</span></div>
-            <div class="meta-item"><span class="meta-icon">🎯</span><span>5+ Projects</span></div>
-          </div>
         </div>
       </div>
 
       <!-- Course 3: ESP32 -->
       <div class="course-card">
         <div class="course-image-container">
-          <img src="https://raw.githubusercontent.com/pprojectcentreee/KARUPPUADIMAI/main/esp32.png" alt="ESP32" class="course-image" loading="lazy">
-          <div class="image-overlay">
-            <span class="course-badge">ADVANCED</span>
-          </div>
+          <img src="https://raw.githubusercontent.com/pprojectcentreee/KARUPPU-ADIMAI/main/esp32.png" alt="ESP32" class="course-image" loading="lazy">
         </div>
         <div class="course-details">
           <div class="course-number">03</div>
@@ -838,46 +724,13 @@
             <span class="topic-tag">Web Server</span>
             <span class="topic-tag">Cloud Integration</span>
           </div>
-          <div class="course-meta">
-            <div class="meta-item"><span class="meta-icon">📚</span><span>12 Modules</span></div>
-            <div class="meta-item"><span class="meta-icon">⏱️</span><span>6 Weeks</span></div>
-            <div class="meta-item"><span class="meta-icon">🎯</span><span>IoT Projects</span></div>
-          </div>
         </div>
       </div>
 
       <!-- Course 4: PCB Design -->
       <div class="course-card reverse">
         <div class="course-image-container">
-          <div class="pcb-placeholder">
-            <svg viewBox="0 0 400 300" class="pcb-svg">
-              <rect width="400" height="300" fill="#0a3d0a" rx="10"/>
-              <line x1="50" y1="50" x2="200" y2="50" stroke="#90EE90" stroke-width="3"/>
-              <line x1="200" y1="50" x2="200" y2="150" stroke="#90EE90" stroke-width="3"/>
-              <line x1="200" y1="150" x2="350" y2="150" stroke="#90EE90" stroke-width="3"/>
-              <line x1="50" y1="100" x2="150" y2="100" stroke="#90EE90" stroke-width="2"/>
-              <line x1="150" y1="100" x2="150" y2="200" stroke="#90EE90" stroke-width="2"/>
-              <line x1="150" y1="200" x2="300" y2="200" stroke="#90EE90" stroke-width="2"/>
-              <line x1="100" y1="250" x2="350" y2="250" stroke="#90EE90" stroke-width="2"/>
-              <line x1="300" y1="200" x2="300" y2="250" stroke="#90EE90" stroke-width="2"/>
-              <circle cx="50" cy="50" r="8" fill="#FFD700" stroke="#333" stroke-width="2"/>
-              <circle cx="350" cy="150" r="8" fill="#FFD700" stroke="#333" stroke-width="2"/>
-              <circle cx="100" cy="250" r="8" fill="#FFD700" stroke="#333" stroke-width="2"/>
-              <circle cx="350" cy="250" r="8" fill="#FFD700" stroke="#333" stroke-width="2"/>
-              <rect x="80" y="85" width="40" height="30" rx="3" fill="#333" stroke="#666" stroke-width="1"/>
-              <rect x="220" y="130" width="50" height="40" rx="3" fill="#222" stroke="#666" stroke-width="1"/>
-              <text x="245" y="155" fill="#aaa" text-anchor="middle" font-size="10" font-family="monospace">IC</text>
-              <circle cx="200" cy="50" r="5" fill="#FFD700"/>
-              <circle cx="200" cy="150" r="5" fill="#FFD700"/>
-              <circle cx="150" cy="100" r="5" fill="#FFD700"/>
-              <circle cx="150" cy="200" r="5" fill="#FFD700"/>
-              <circle cx="300" cy="200" r="5" fill="#FFD700"/>
-              <text x="200" y="290" fill="#90EE90" text-anchor="middle" font-size="14" font-family="Orbitron">PCB DESIGN</text>
-            </svg>
-          </div>
-          <div class="image-overlay">
-            <span class="course-badge">SPECIALIZED</span>
-          </div>
+          <img src="https://raw.githubusercontent.com/pprojectcentreee/KARUPPU-ADIMAI/main/pcb.jpg" alt="PCB Design" class="course-image" loading="lazy">
         </div>
         <div class="course-details">
           <div class="course-number">04</div>
@@ -899,21 +752,13 @@
             <span class="topic-tag">Gerber Files</span>
             <span class="topic-tag">Manufacturing</span>
           </div>
-          <div class="course-meta">
-            <div class="meta-item"><span class="meta-icon">📚</span><span>8 Modules</span></div>
-            <div class="meta-item"><span class="meta-icon">⏱️</span><span>4 Weeks</span></div>
-            <div class="meta-item"><span class="meta-icon">🎯</span><span>Design & Fabricate</span></div>
-          </div>
         </div>
       </div>
 
       <!-- Course 5: IoT -->
       <div class="course-card">
         <div class="course-image-container">
-          <img src="https://raw.githubusercontent.com/pprojectcentreee/KARUPPUADIMAI/main/iot.jpg" alt="IoT" class="course-image" loading="lazy">
-          <div class="image-overlay">
-            <span class="course-badge">ADVANCED</span>
-          </div>
+          <img src="https://raw.githubusercontent.com/pprojectcentreee/KARUPPU-ADIMAI/main/iot.jpg" alt="IoT" class="course-image" loading="lazy">
         </div>
         <div class="course-details">
           <div class="course-number">05</div>
@@ -933,11 +778,6 @@
             <span class="topic-tag">Firebase</span>
             <span class="topic-tag">Dashboards</span>
             <span class="topic-tag">Smart Systems</span>
-          </div>
-          <div class="course-meta">
-            <div class="meta-item"><span class="meta-icon">📚</span><span>10 Modules</span></div>
-            <div class="meta-item"><span class="meta-icon">⏱️</span><span>6 Weeks</span></div>
-            <div class="meta-item"><span class="meta-icon">🎯</span><span>Complete IoT System</span></div>
           </div>
         </div>
       </div>
@@ -964,16 +804,13 @@
   </footer>
 
   <script>
-    // ============================================
     // INTRO ANIMATION
-    // ============================================
     (function() {
       var overlay = document.getElementById('introOverlay');
       var titleEl = document.getElementById('introTitle');
       var particlesContainer = document.getElementById('introParticles');
       var titleText = 'KARUPPU ADIMAI';
 
-      // Create floating particles for intro
       for (var i = 0; i < 30; i++) {
         var p = document.createElement('div');
         p.className = 'intro-particle';
@@ -986,7 +823,6 @@
         particlesContainer.appendChild(p);
       }
 
-      // Animate letters one by one
       for (var i = 0; i < titleText.length; i++) {
         var span = document.createElement('span');
         span.className = 'intro-letter';
@@ -995,21 +831,17 @@
         titleEl.appendChild(span);
       }
 
-      // Trigger the reveal (split curtain open) after delay
       setTimeout(function() {
         overlay.classList.add('reveal');
       }, 2800);
 
-      // Remove overlay completely after transition
       setTimeout(function() {
         overlay.classList.add('hidden');
         document.body.classList.remove('intro-active');
       }, 4000);
     })();
 
-    // ============================================
     // HAMBURGER MENU
-    // ============================================
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -1020,9 +852,7 @@
       });
     }
 
-    // ============================================
     // PARTICLE BACKGROUND
-    // ============================================
     const canvas = document.getElementById('particleCanvas');
     if (canvas) {
       const ctx = canvas.getContext('2d');
@@ -1097,9 +927,7 @@
       animate();
     }
 
-    // ============================================
     // SCROLL ANIMATIONS
-    // ============================================
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -1113,9 +941,7 @@
       observer.observe(card);
     });
 
-    // ============================================
     // NAV SCROLL EFFECT
-    // ============================================
     window.addEventListener('scroll', function () {
       var nav = document.querySelector('.main-nav');
       if (window.pageYOffset > 50) {
